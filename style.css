@@ -450,21 +450,3 @@ body {
   border-bottom: 1px solid #fff;
   font-size: 24px;
 }
-.data_time {
-  display: flex;
-  flex-direction: column;
-}
-
-#text {
-  max-width: 412px;
-}
-
-#order {
-  width: 212px;
-  height: 58px;
-  border-radius: 10px;
-}
-.block_form {
-  display: flex;
-  flex-direction: column;
-}
