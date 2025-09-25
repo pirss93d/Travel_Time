@@ -428,7 +428,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  max-width: 420;
+  max-width: 420px;
   height: 51px;
   background-color: rgb(31, 30, 29);
 }
@@ -450,21 +450,30 @@ body {
   border-bottom: 1px solid #fff;
   font-size: 24px;
 }
-.data_time {
+.block_two-form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background-color: rosybrown;
 }
 
-#text {
-  max-width: 412px;
+/* FORMA ************* FORMA ************* FORMA ************* FORMA *************/
+form {
+  width: 339px;
+  background-color: rgb(22, 12, 150);
 }
 
-#order {
-  width: 212px;
-  height: 58px;
-  border-radius: 10px;
-}
-.block_form {
+#adres {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+}
+
+.form_data-time {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form_data-time input:nth-child(2) {
+  width: 80%;
+}
+.form_data-time input:nth-child(4) {
+  width: 79px;
 }
