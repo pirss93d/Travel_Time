@@ -394,7 +394,7 @@ body {
   max-width: 240px;
   height: 29px;
   color: #fff;
-
+  cursor: pointer;
   background-color: #373535;
   border: none;
 }
@@ -406,7 +406,10 @@ body {
   max-width: 266px;
   height: 29px;
   text-decoration: none;
+  background-color: #373535;
+  border: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .main_order:hover,
