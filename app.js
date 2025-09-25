@@ -2,6 +2,7 @@
 let isOpen = false;
 const btn = document.querySelector(".main_order");
 const btn_on = document.querySelector(".btn_order");
+const btn_push = document.querySelector("#form_btn-push");
 
 // btn.addEventListener("click", function () {
 //   if (!isOpen) {

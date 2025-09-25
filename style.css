@@ -473,10 +473,8 @@ body {
 .btn_order {
   cursor: pointer;
   display: none;
-
   width: 339px;
   height: 337px;
-  background-color: rgb(8, 226, 226);
   transition: 0.5;
 }
 .form_input {
@@ -530,6 +528,7 @@ body {
 }
 
 #form_btn-push {
+  font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
