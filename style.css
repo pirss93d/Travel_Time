@@ -478,9 +478,10 @@ body {
   transition: 0.5;
 }
 .form_input {
+  border-radius: 10px;
   max-width: 339px;
   height: 32px;
-  background-color: coral;
+
   border: 0.5px solid #fff;
 }
 #adres {
@@ -541,5 +542,6 @@ body {
 }
 
 input {
+  border-radius: 10px;
   box-sizing: border-box;
 }
