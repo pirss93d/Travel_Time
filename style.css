@@ -393,8 +393,10 @@ body {
   margin-top: 15px;
   max-width: 240px;
   height: 29px;
-  text-decoration: none;
   color: #fff;
+
+  background-color: #373535;
+  border: none;
 }
 
 .main_help {
@@ -414,7 +416,7 @@ body {
 
 /* Block_TWo *********************/
 
-.block_two {
+/* .block_two {
   margin: 0 auto;
   max-width: 420px;
   height: 918px;
@@ -450,30 +452,95 @@ body {
   border-bottom: 1px solid #fff;
   font-size: 24px;
 }
-.block_two-form {
+.data_time {
+  display: flex;
+  flex-direction: column;
+}
+
+#text {
+  max-width: 412px;
+}
+
+#order {
+  width: 212px;
+  height: 58px;
+  border-radius: 10px;
+}
+.block_form {
+  display: flex;
+  flex-direction: column;
+} */
+.btn_order {
+  cursor: pointer;
+  display: none;
+
+  width: 339px;
+  height: 337px;
+  background-color: rgb(8, 226, 226);
+  transition: 0.5;
+}
+.form_input {
+  max-width: 339px;
+  height: 32px;
+  background-color: coral;
+  border: 0.5px solid #fff;
+}
+#adres {
+  width: 100%;
+  height: 100%;
+}
+
+.form_input:nth-child(2) {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#date {
+  width: 250px;
+  height: 100%;
+}
+#time {
+  width: 87px;
+  height: 100%;
+}
+.form_input:nth-child(3) {
+  margin-top: 10px;
+}
+#number {
+  width: 100%;
+  height: 100%;
+}
+.form_input:nth-child(4) {
+  margin-top: 10px;
+}
+#coment {
+  width: 100%;
+  height: 100%;
+}
+.input_file {
+  cursor: pointer;
+  margin: 17px auto 0 auto;
   display: flex;
   justify-content: center;
-  background-color: rosybrown;
+  align-items: center;
+  width: 315px;
+  height: 35px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
 }
 
-/* FORMA ************* FORMA ************* FORMA ************* FORMA *************/
-form {
-  width: 339px;
-  background-color: rgb(22, 12, 150);
-}
-
-#adres {
+#form_btn-push {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 59px auto;
+  cursor: pointer;
+  width: 212px;
+  height: 58px;
+  border: none;
+  border-radius: 10px;
 }
 
-.form_data-time {
-  display: flex;
-  flex-wrap: wrap;
-}
-.form_data-time input:nth-child(2) {
-  width: 80%;
-}
-.form_data-time input:nth-child(4) {
-  width: 79px;
+input {
+  box-sizing: border-box;
 }

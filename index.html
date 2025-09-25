@@ -4,15 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
     <title>Транспорт</title>
   </head>
   <body>
     <div class="main">
       <div class="main_block-one">
         <div class="main_logo">Транспорт</div>
-        <a href="block_two/block_two.html" class="main_order"
+        <!-- <a href="block_two/block_two.html" class="main_order"
           >Заказ транспорта</a
-        >
+        > -->
+        <button class="main_order">Заказать</button>
+        <div class="btn_order">
+          <form action="">
+            <div class="form_input">
+              <label for="adres">
+                <input type="text" id="adres" placeholder="Адрес" />
+              </label>
+            </div>
+            <div class="form_input">
+              <label for="date">
+                <input type="date" id="date" />
+              </label>
+              <label for="time">
+                <input type="time" id="time" />
+              </label>
+            </div>
+            <div class="form_input">
+              <label for="number">
+                <input
+                  type="number"
+                  id="number"
+                  placeholder="Кол-во пассажиров"
+                />
+              </label>
+            </div>
+            <div class="form_input">
+              <label for="coment">
+                <input
+                  type="text"
+                  id="coment"
+                  placeholder="Коментарий  для водителя"
+                />
+              </label>
+            </div>
+            <div class="input_file">
+              <input type="file" id="my_file" hidden />
+              <label for="my_file">Подкрепить файл</label>
+            </div>
+            <button id="form_btn-push">Заказать</button>
+          </form>
+        </div>
         <a href="#" class="main_help">Помощь/Поддержка</a>
       </div>
     </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
+    <script src="app.js" defer></script>
     <title>Заказ Транспорт</title>
   </head>
   <body>
@@ -19,20 +20,34 @@
         </div>
         <div class="profile">Admin</div>
       </div>
-      <div class="block_two-form">
-        <form action="#" id="two_form">
-          <div class="form_adres">
-            <label for="adres"></label>
-            <input type="text" id="adres" placeholder="Адрес" />
-          </div>
-          <div class="form_data-time">
-            <label for="day"></label>
-            <input type="date" id="day" />
-            <label for="time"></label>
-            <input type="time" id="time" />
-          </div>
-        </form>
-      </div>
+      <form action="" class="block_form">
+        <label for="text"></label>
+        <input type="text" id="text" placeholder="Адрес" />
+        <div class="data_time">
+          <label for="data"></label>
+          <input type="date" id="data" />
+          <label for="time"></label>
+          <input type="time" id="time" />
+        </div>
+        <label for="passage"></label>
+        <input
+          type="number"
+          id="passage"
+          placeholder="Кол-во пассажиров"
+          required
+        />
+        <label for="driver"></label>
+        <input
+          type="text"
+          id="driver"
+          placeholder="Коментарий  для водителя"
+          required
+        />
+        <label for="file"></label>
+        <input type="file" id="file" />
+
+        <button id="order">заказать</button>
+      </form>
     </div>
   </body>
 </html>
