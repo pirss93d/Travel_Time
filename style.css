@@ -486,6 +486,7 @@ body {
   height: 58px;
   border: none;
   border-radius: 10px;
+  user-select: none;
 }
 
 .main_block-helper {
