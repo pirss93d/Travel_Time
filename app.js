@@ -42,26 +42,3 @@ btn_helper.addEventListener("click", function () {
     isOpen_help = false;
   }
 });
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // предотвращаем стандартную отправку
-
-  const formData = new FormData(form);
-
-  fetch("/submit", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Форма успешно отправлена!");
-      } else {
-        alert("Ошибка при отправке формы.");
-      }
-    })
-    .catch(() => {
-      alert("Ошибка сети или сервера.");
-    });
-});

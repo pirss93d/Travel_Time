@@ -1,77 +1,69 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Анимация Матрица на CSS</title>
-    <style>
-      body {
-        margin: 0;
-        background: black;
-        overflow: hidden;
-        color: #00ff00;
-        font-family: monospace;
+<form id="loginForm">
+  <input
+    type="text"
+    id="username"
+    name="username"
+    placeholder="Имя пользователя"
+    required
+  />
+  <input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Пароль"
+    required
+  />
+  <button type="submit">Войти</button>
+</form>
+<div id="message"></div>
+
+<script>
+  document
+    .getElementById("loginForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Отменяем стандартную отправку формы
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const messageElem = document.getElementById("message");
+
+      // Простая валидация
+      if (!username) {
+        messageElem.textContent = "Введите имя пользователя";
+        return;
       }
-
-      .matrix {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        user-select: none;
-        display: flex;
-        flex-wrap: wrap;
+      if (!password || password.length < 6) {
+        messageElem.textContent = "Пароль должен быть не менее 6 символов";
+        return;
       }
+      messageElem.textContent = "";
 
-      .matrix span {
-        display: inline-block;
-        animation-name: drop;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        opacity: 0;
-        animation-fill-mode: forwards;
-      }
+      // Подготовка данных для отправки
+      const data = { username, password };
 
-      @keyframes drop {
-        0% {
-          opacity: 0;
-          transform: translateY(-100%);
-        }
-        10% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(100vh);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="matrix" id="matrix"></div>
-
-    <script>
-      const matrix = document.getElementById("matrix");
-      const symbols =
-        "アァカサタナハマヤャラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      const count = 500;
-
-      for (let i = 0; i < count; i++) {
-        const span = document.createElement("span");
-        span.textContent = symbols.charAt(
-          Math.floor(Math.random() * symbols.length)
-        );
-
-        // задаём случайную задержку, чтобы анимация была разбросана
-        span.style.animationDelay = Math.random() * 5 + "s";
-
-        // задаём разные размеры символов
-        span.style.fontSize = Math.random() * 20 + 10 + "px";
-
-        // место на экране в процентах по ширине
-        span.style.width = "15%";
-        matrix.appendChild(span);
-      }
-    </script>
-  </body>
-</html>
+      // Отправка данных через fetch (AJAX)
+      fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error("Ошибка сети");
+          return response.json();
+        })
+        .then((result) => {
+          // Обработка ответа от сервера
+          if (result.success) {
+            messageElem.textContent = "Вход выполнен успешно!";
+            // Здесь можно перенаправить или обновить страницу
+          } else {
+            messageElem.textContent = "Ошибка: " + result.message;
+          }
+        })
+        .catch((error) => {
+          messageElem.textContent = "Ошибка при отправке: " + error.message;
+        });
+    });
+</script>
